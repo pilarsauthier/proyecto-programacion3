@@ -1,20 +1,16 @@
 
+import NotFound from './Components/NotFound';
+
+import { Link, Route, Switch} from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+<Switch>
+  <Route exact path="/" component={Home}/>
+  <Route component={NotFound}/> 
+</Switch>
     </div>
   );
 }
