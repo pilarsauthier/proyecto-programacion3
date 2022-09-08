@@ -9,10 +9,22 @@ class Home extends Component {
         }
     }
     componentDidMount(){
-        fetch
+        fetch(
+            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10`
+        )
+        .then((results)=> results.json())
+        .then((resultados)=>{
+            console.log(resultados);
+        })
     }
 
-
+    render(){
+        return(
+            <div>
+                <h1>Home</h1>
+            </div>
+        )
+    }
 
 }
 

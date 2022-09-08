@@ -1,0 +1,22 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(224, 84, 182);
+    
+}
+
+.navBar{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+}
+.logo h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
