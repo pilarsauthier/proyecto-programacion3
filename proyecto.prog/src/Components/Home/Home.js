@@ -15,7 +15,7 @@ class Home extends Component {
     }
     componentDidMount(){
         fetch(
-            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart?limit=4`
+            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart?limit=8`
         )
         .then((results)=> results.json())
         .then((resultados)=>{

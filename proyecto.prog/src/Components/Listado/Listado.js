@@ -3,7 +3,7 @@ import './Listado.css'
 
 function Listado(props){
     return(
-    <section>
+    <section className="fila">
         <h2 className="lista">{props.titulo}</h2>  
         <h3>Ver todas</h3>
         <div className="card">
