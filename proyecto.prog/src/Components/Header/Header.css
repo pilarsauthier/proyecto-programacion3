@@ -2,7 +2,9 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(224, 84, 182);
-    
+    width: 100%;
+    margin: 0%;
+
 }
 
 .navBar{
