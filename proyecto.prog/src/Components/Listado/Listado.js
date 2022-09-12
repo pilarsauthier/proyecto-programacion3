@@ -13,4 +13,4 @@ function Listado(props){
     )
 }
 
-export default Listado
+export default Listado;
