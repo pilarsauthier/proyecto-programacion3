@@ -3,7 +3,7 @@ import Listado from "../Listado/Listado";
 import Loader from "../Loader/Loader"
 import './vertodas.css'
 
-class VerTodas extends Component {
+class VerTodasCanciones extends Component {
     constructor(props){
     
         super(props);
@@ -13,7 +13,7 @@ class VerTodas extends Component {
     }
     componentDidMount(){
         fetch(
-            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart`
+            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart?limit=48`
         )
         .then((results)=> results.json())
         .then((resultados)=>{
@@ -47,4 +47,4 @@ class VerTodas extends Component {
 
 }
 
-export default VerTodas
+export default VerTodasCanciones

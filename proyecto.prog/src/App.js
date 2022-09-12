@@ -2,7 +2,8 @@ import React from 'react';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
-import VerTodas from './Components/VerTodas/VerTodas'
+import VerTodasCanciones from './Components/VerTodas/VerTodasCanciones'
+import VerTodosAlbum from './Components/VerTodas/VerTodosAlbum'
 
 
 import NotFound from './Components/NotFound/NotFound';
@@ -18,7 +19,8 @@ function App() {
   
 <Switch>
   <Route path="/" exact={true} component={Home}/>
-  <Route path="/VerTodas" component={VerTodas}/>
+  <Route path="/VerTodasCanciones" component={VerTodasCanciones}/>
+  <Route path="/VerTodosAlbum" component={VerTodosAlbum}/>
   <Route path="" component={NotFound}/> 
 </Switch>
     <Footer/>
