@@ -1,3 +1,4 @@
+import React from 'react';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
@@ -14,8 +15,11 @@ function App() {
     <Home/>
     <Footer/>
       
-    
-
+  
+<Switch>
+  <Route exact path="/" component={Home}/>
+  <Route component={NotFound}/> 
+</Switch>
     </div>
   );
 }
