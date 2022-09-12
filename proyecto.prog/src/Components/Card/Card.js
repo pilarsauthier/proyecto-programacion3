@@ -3,8 +3,8 @@ import './Card.css'
 
 function Card(props){
     return(
-       <div className='card'> 
-       <article className="card-detail">
+       <div className='card-detail'> 
+       <article>
             <img src={props.data.cover || props.data.album.cover}></img> 
             <h3>{props.data.title}</h3>
             <p className='card-detail'>Duracion: {props.data.duration} segundos</p>

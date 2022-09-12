@@ -5,10 +5,12 @@ function Listado(props){
     return(
     <section>
         <h2 className="lista">{props.titulo}</h2>  
+        <div className="card">
         {props.info.map( item =>{
             console.log(item);
         return <Card data={item}/>
-    })}
+        
+    })}</div>
     
     </section>
     )
