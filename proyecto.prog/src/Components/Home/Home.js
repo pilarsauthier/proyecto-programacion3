@@ -1,8 +1,10 @@
 import React, {Component} from "react";
 import Listado from "../Listado/Listado";
+import "./home.css"
 
 class Home extends Component {
     constructor(props){
+    
         super(props);
         this.state = {
             info: ''
@@ -20,13 +22,14 @@ class Home extends Component {
             });
         })
         .catch((e)=> console.log(e));
+
     }
 
     render(){
         console.log(this.state.info);
         if(this.state.info){
             return(
-                <div>
+                <div className="home">
                 <Listado info= {this.state.info.tracks.data}  titulo={'Canciones'} />
                 <Listado info= {this.state.info.albums.data}  titulo={'Albumes'} />
                 </div>
