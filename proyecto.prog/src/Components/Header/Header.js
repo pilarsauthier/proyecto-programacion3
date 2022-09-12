@@ -18,7 +18,7 @@ class Header extends Component{
                 </div>
                 <div>
                     <ul className='navBar'>
-                        <li><a href='#'>Home</a></li>
+                        <li><a href='../Components/Home/Home.js'>Home</a></li>
                         <li><a href='#'>Favoritos</a></li>
                         <li><a href="#">Ver Todos</a></li>
                     </ul>
