@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Listado from "../Listado/Listado";
-import "./home.css"
+import Loader from "../Loader/Loader"
+import './home.css'
 
 class Home extends Component {
     constructor(props){
@@ -35,7 +36,9 @@ class Home extends Component {
                 </div>
             )
         }else{
-            return (<h3>Loading...</h3>)
+            return (<div className="lds-hourglass">
+            <h3>Loading...</h3>
+            </div>)
         }
 
         
