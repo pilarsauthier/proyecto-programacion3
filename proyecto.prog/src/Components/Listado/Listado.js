@@ -7,9 +7,9 @@ function Listado(props){
         <h2 className="lista">{props.titulo}</h2>  
         <h3>Ver todas</h3>
         <div className="card">
-        {props.info.map( item =>{
+        {props.info.map((item, idx) =>{
             console.log(item);
-        return <Card data={item}/>
+        return <Card key={`${Date.now()}-${idx}`} data={item}/>
         
     })}</div>
     
