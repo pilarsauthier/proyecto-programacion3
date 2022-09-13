@@ -1,5 +1,9 @@
 
-.home{
-    background-color: rgb(251, 252, 255);
+*{
+    margin: 0;
     
+}
+
+.App{
+    background-color:  whitesmoke;
 }

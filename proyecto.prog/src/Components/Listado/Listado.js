@@ -4,8 +4,10 @@ import './Listado.css'
 function Listado(props){
     return(
     <section className="fila">
-        <h2 className="lista">{props.titulo}</h2>  
-        <h3>Ver todas</h3>
+        <div className='titulo'>
+            <h2 className="lista">{props.titulo}</h2>  
+        </div>
+        <h3>VER TODAS</h3>
         <div className="card">
         {props.info.map((item, idx) =>{
             console.log(item);
