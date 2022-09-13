@@ -1,11 +1,9 @@
 import React, {Component} from "react";
 import Listado from "../Listado/Listado";
 import Loader from "../Loader/Loader"
-import './home.css'
+import './vertodas.css'
 
-
-
-class Home extends Component {
+class VerTodasCanciones extends Component {
     constructor(props){
     
         super(props);
@@ -15,7 +13,7 @@ class Home extends Component {
     }
     componentDidMount(){
         fetch(
-            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart?limit=8`
+            `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart?limit=48`
         )
         .then((results)=> results.json())
         .then((resultados)=>{
@@ -35,7 +33,7 @@ class Home extends Component {
                 <div className="home">
                      
                 <Listado info= {this.state.info.tracks.data}  titulo={'Canciones'} />
-                <Listado info= {this.state.info.albums.data}  titulo={'Albumes'} />
+             
                 </div>
             )
         }else{
@@ -49,4 +47,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default VerTodasCanciones

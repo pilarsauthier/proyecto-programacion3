@@ -1,16 +1,10 @@
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-}
+
 
 
 .card-detail{
     width: 20%;
-    border-radius: 10px;
-    background-color: rgb(182, 100, 161);
-    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -21,5 +15,8 @@
 
 .boton{
     display: flex;
+}
+img{
+    size: 20%;
 }
 

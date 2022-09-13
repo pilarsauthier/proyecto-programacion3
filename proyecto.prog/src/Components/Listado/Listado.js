@@ -3,12 +3,15 @@ import './Listado.css'
 
 function Listado(props){
     return(
-    <section>
+    <section className="fila">
         <h2 className="lista">{props.titulo}</h2>  
-        {props.info.map( item =>{
+        <h3>Ver todas</h3>
+        <div className="card">
+        {props.info.map((item, idx) =>{
             console.log(item);
-        return <Card data={item}/>
-    })}
+        return <Card key={`${Date.now()}-${idx}`} data={item}/>
+        
+    })}</div>
     
     </section>
     )
