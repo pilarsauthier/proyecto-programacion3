@@ -12,7 +12,7 @@ function Card(props){
             
             <button className='boton'>Ver Mas</button>
             <button className='boton'>Ir Detalle</button>
-            <button className='boton'>Agregar a Favoritos</button>
+            <button onClick={()=> this.addFavorites(this.props.info.id) }>Agregar a favoritos</button>
         </article>
         </div>
     )
