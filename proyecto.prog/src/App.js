@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from './Components/Home/Home'
+import Home from './Screens/Home/Home'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
-import Favoritos from './Components/Favoritos/Favoritos'
+import Favoritos from './Screens/Favoritos/Favoritos'
 import VerTodasCanciones from './Components/VerTodas/VerTodasCanciones'
 import VerTodosAlbum from './Components/VerTodas/VerTodosAlbum'
 

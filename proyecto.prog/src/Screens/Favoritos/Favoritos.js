@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Listado from '../Listado/Listado';
-import './favoritos.css'
+import Listado from '../../Components/Listado/Listado';
+import Card from '../../Components/Card/Card';
+import '../../Components/Listado/Listado.css'
 
 class Favoritos extends Component {
     constructor(props){
@@ -18,22 +19,28 @@ class Favoritos extends Component {
             Promise.all(
                 parsedStorage.map(elm =>{
                     return(
-                        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/${elm}`)
+                        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${elm}`)
                         .then(resp => resp.json())
                         .then(data => data)
                     )
                 })
             )
-            .then(data => console.log(data))
+            .then(data => this.setState({
+                arrayFavs: data
+            }, ()=> console.log(this.state.arrayFavs)))
         }
     }
     render(){
         return(
-            <h1> Favoritos </h1>,
-            
-            <div>
-             <Listado info= {this.state.arrayFavs} titulo={'Tracks'}/>
-            </div>
+            <h1> Favoritos </h1> ,
+            <div className='card'>
+    
+        {this.state.arrayFavs.map((fav, idx)=>{
+                 console.log(fav);
+                 return <Card key={`${Date.now()}-${idx}`} data={fav}/>
+             })}
+    
+            </div>  
         )
     }
 }
