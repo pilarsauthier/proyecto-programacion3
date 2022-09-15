@@ -1,21 +1,88 @@
-
+import React, {Component} from 'react'
 import './Card.css'
 
-function Card(props){
+class Card extends Component{
+    constructor(props){
+        super(props)
+        this.state ={
+          verMas: 'hide',
+          favorito: false
+        }
+      }
+
+      componentDidMount(){
+        let storage = localStorage.getItem('favoritos')
+        let parsedStorage = JSON.parse(storage)/*[25, 45, 89]*/
+        if(parsedStorage !== null){
+          let isFavorite = parsedStorage.includes(this.props.data.id) /*Si 89 esta incluido en el array */
+          if(isFavorite) {
+            this.setState({
+              favorito:true
+            })
+          }
+        }
+    
+      }
+
+      addFavorites(id){
+        let favStorage = localStorage.getItem('favoritos')
+    
+        if(favStorage === null){
+          /* favStorage es null */
+          let favArr = [id]
+          let arrToString = JSON.stringify(favArr)
+          localStorage.setItem('favoritos', arrToString)
+        } else {
+          /*favStorage es un string de array con algun valor o vacio*/
+          let parsedArr = JSON.parse(favStorage)
+          parsedArr.push(id)
+          let arrToString = JSON.stringify(parsedArr)
+          localStorage.setItem('favoritos', arrToString)
+        }
+    
+        this.setState({
+          favorito:true
+        })
+    
+      }
+    
+      removeFavorites(id){
+        /* 39 */
+        let favStorage = localStorage.getItem('favoritos')
+        let parsedStorage = JSON.parse(favStorage) /*Vuelve a ser Array [25, 12, 39]*/
+        let filterStorage = parsedStorage.filter(elm => elm !== id) /*[25, 12]*/
+    
+        let storageToString = JSON.stringify(filterStorage)
+    
+        localStorage.setItem('favoritos', storageToString)
+    
+        this.setState({
+          favorito: false
+        })
+      }
+
+    render(){
     return(
        <div className='card-detail'> 
        <article>
-            <img src={props.data.cover_medium || props.data.album.cover_medium}></img> 
-            <h3>{props.data.title}</h3>
-            <p className='card-detail'>Duracion: {props.data.duration || null} segundos</p>
-            <p className='card-detail'>Ranking: {props.data.rank || props.data.position}</p>
+            <img src={this.props.data.cover_medium || this.props.data.album.cover_medium}></img> 
+            <h3>{this.props.data.title}</h3>
+            <p className='card-detail'>Duracion: {this.props.data.duration || null} segundos</p>
+            <p className='card-detail'>Ranking: {this.props.data.rank || this.props.data.position}</p>
             
             <button className='boton'>Ver Mas</button>
             <button className='boton'>Ir Detalle</button>
-            <button onClick={()=> this.addFavorites(this.props.info.id) }>Agregar a favoritos</button>
+            {
+              this.state.favorito
+              ?
+                <button onClick={()=> this.removeFavorites(this.props.data.id) }>Sacar de favoritos</button>
+              :
+                <button onClick={()=> this.addFavorites(this.props.data.id) }>Agregar a favoritos</button>
+            }
         </article>
         </div>
     )
+    }
 }
 
 
