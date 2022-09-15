@@ -1,3 +1,4 @@
+
 import Card from "../Card/Card"
 import './Listado.css'
 
@@ -18,5 +19,6 @@ function Listado(props){
     </section>
     )
 }
+.
 
 export default Listado;
