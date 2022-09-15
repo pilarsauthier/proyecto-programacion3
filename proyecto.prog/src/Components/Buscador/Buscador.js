@@ -24,7 +24,7 @@ class Buscador extends Component {
         return (
            <form onSubmit= {(event)=> this.prevenirRefresh(event)}>
             <input onChange={(event)=> this.controlarCambiosDelInput(event)} value={this.state.valorInput}/> 
-            <button type='Submit'> </button>
+            <button type='submit'> Buscar </button>
            </form>
         );
     }

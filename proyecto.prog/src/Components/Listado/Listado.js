@@ -22,7 +22,7 @@ class Listado extends Component{
         <h3>VER TODAS</h3>
         <div className="card">
         {this.props.info.map((item, idx) =>{
-            console.log(item);
+          
         return <Card key={`${Date.now()}-${idx}`} data={item}/>
         
     })}</div>
