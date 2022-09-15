@@ -12,7 +12,7 @@ class Card extends Component{
 
       componentDidMount(){
         let storage = localStorage.getItem('favoritos')
-        let parsedStorage = JSON.parse(storage)/*[25, 45, 89]*/
+        let parsedStorage = JSON.parse(storage)
         if(parsedStorage !== null){
           let isFavorite = parsedStorage.includes(this.props.data.id) /*Si 89 esta incluido en el array */
           if(isFavorite) {
@@ -28,12 +28,10 @@ class Card extends Component{
         let favStorage = localStorage.getItem('favoritos')
     
         if(favStorage === null){
-          /* favStorage es null */
           let favArr = [id]
           let arrToString = JSON.stringify(favArr)
           localStorage.setItem('favoritos', arrToString)
         } else {
-          /*favStorage es un string de array con algun valor o vacio*/
           let parsedArr = JSON.parse(favStorage)
           parsedArr.push(id)
           let arrToString = JSON.stringify(parsedArr)
@@ -47,10 +45,9 @@ class Card extends Component{
       }
     
       removeFavorites(id){
-        /* 39 */
         let favStorage = localStorage.getItem('favoritos')
-        let parsedStorage = JSON.parse(favStorage) /*Vuelve a ser Array [25, 12, 39]*/
-        let filterStorage = parsedStorage.filter(elm => elm !== id) /*[25, 12]*/
+        let parsedStorage = JSON.parse(favStorage)
+        let filterStorage = parsedStorage.filter(elm => elm !== id) 
     
         let storageToString = JSON.stringify(filterStorage)
     
