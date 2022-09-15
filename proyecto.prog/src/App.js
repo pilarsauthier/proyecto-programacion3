@@ -25,6 +25,7 @@ function App() {
   <Route path="/VerTodasCanciones" component={VerTodasCanciones}/>
   <Route path="/VerTodosAlbum" component={VerTodosAlbum}/>
   <Route path="" component={NotFound}/> 
+  
 </Switch>
     <Footer/>
     </div>
