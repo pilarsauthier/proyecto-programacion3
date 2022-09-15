@@ -21,7 +21,7 @@ class Header extends Component{
                     <div>
                         <ul className='navBar'>
                             <li><a href='/'>Home</a></li>
-                            <li><a href='#'>Favoritos</a></li>
+                            <li><a href='/Favoritos'>Favoritos</a></li>
                         </ul>
                     </div>
                 </header>

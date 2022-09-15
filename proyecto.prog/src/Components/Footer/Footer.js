@@ -13,7 +13,7 @@ class Footer extends Component{
             <footer>
                 <div className='footer'>
                     <h4>Franco Galluzzo</h4>
-                    <h4>Clara Zemborain</h4>
+                    <h4>Maria Clara Zemborain</h4>
                     <h4>Maria del Pilar Sauthier</h4>
                 </div>
             </footer>
