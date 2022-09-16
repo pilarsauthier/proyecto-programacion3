@@ -21,10 +21,10 @@ class Header extends Component{
                     </div>
                     <div>
                         <ul className='navBar'>
-                          <li> <Link to='/'>Home</Link> </li> 
-                           <li> <Link to='Favoritos'>Favoritos</Link> </li>
-                           <li> <Link to='VerCanciones'>Canciones</Link> </li>
-                           <li> <Link to='VerAlbumes'>Albumes</Link> </li>
+                          <li> <Link className='link' to='/'>Home</Link> </li> 
+                           <li> <Link className='link' to='Favoritos'>Favoritos</Link> </li>
+                           <li> <Link className='link' to='VerCanciones'>Canciones</Link> </li>
+                           <li> <Link className='link' to='VerAlbumes'>Albumes</Link> </li>
 
                         </ul>
                     </div>
