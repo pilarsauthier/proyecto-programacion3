@@ -1,9 +1,11 @@
 import React, {Component} from "react";
-import Listado from "../Listado/Listado";
-import Loader from "../Loader/Loader"
-import './vertodas.css'
+import Listado from '../../Components/Listado/Listado';
+import Loader from "../../Components/Loader/Loader"
+import '../../Components/Listado/Listado.css'
+import '../../Screens/VerCanciones/vertodas.css'
+import '../../Components/Listado/Listado.css'
 
-class VerTodasCanciones extends Component {
+class VerAlbumes extends Component {
     constructor(props){
     
         super(props);
@@ -32,7 +34,7 @@ class VerTodasCanciones extends Component {
             return(
                 <div className="home">
                      
-                <Listado info= {this.state.info.tracks.data}  titulo={'Canciones'} />
+                     <Listado info= {this.state.info.albums.data}  titulo={'Albumes'} />
              
                 </div>
             )
@@ -47,4 +49,4 @@ class VerTodasCanciones extends Component {
 
 }
 
-export default VerTodasCanciones
+export default VerAlbumes
