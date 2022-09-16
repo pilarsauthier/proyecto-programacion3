@@ -8,12 +8,15 @@ import Buscador from "../../Components/Buscador/Buscador"
 import './vertodas.css'
 import '../Home/home.css'
 
+
 class VerCanciones extends Component {
     constructor(props) {
 
         super(props);
         this.state = {
-            info: ''
+            info: '',
+            resultadosBusqueda: [],
+            buscar: false
         }
     }
     componentDidMount() {
@@ -22,14 +25,32 @@ class VerCanciones extends Component {
         )
             .then((results) => results.json())
             .then((resultados) => {
-                console.log(resultados);
+                
                 this.setState({
                     info: resultados,
+                  
                 });
             })
             .catch((e) => console.log(e));
 
     }
+
+    buscarData(valor) {
+
+        if (valor.length > 0) {
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${valor}`)
+                .then(resp => resp.json())
+                .then(data => this.setState({
+                    resultadosBusqueda: data.data,
+                    buscar: true
+                }, () => {
+                
+                }))
+        }
+
+    }
+
+
 
     render() {
 
@@ -56,8 +77,8 @@ class VerCanciones extends Component {
                             : ''
                     }
                     </div>
-                    
                     <Listado info={this.state.info.tracks.data} titulo={'Canciones'} />
+                    <Listado info={this.state.info.albums.data} titulo={'Albumes'} />
                 </div>
             )
         } else {
@@ -68,6 +89,8 @@ class VerCanciones extends Component {
 
 
     }
+
 }
+
 
 export default VerCanciones
