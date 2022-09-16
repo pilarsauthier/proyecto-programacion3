@@ -17,12 +17,10 @@ function App() {
     
     
 <Switch>
-  <Route exact path="/" component={Home}/>
+  <Route path="/" exact={true} component={Home}/>
   <Route path="/VerCanciones" exact={true} component={VerCanciones}/>
   <Route path="/VerAlbumes" component={VerAlbumes}/>
   <Route path='/Favoritos' component={Favoritos} />
-  <Route component={NotFound}/> 
-  <Route path="/" exact={true} component={Home}/>
   <Route path="" component={NotFound}/> 
   
 </Switch>
