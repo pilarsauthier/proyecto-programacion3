@@ -6,7 +6,8 @@ class Listado extends Component{
     constructor(props){
         super(props)
         this.state={
-            info:[]
+            info:'',
+            titulo: props.titulo
         }
     }
 
@@ -17,7 +18,7 @@ class Listado extends Component{
         return(
         <section className="fila">
         <div className='titulo'>
-            <h2 className="lista">{this.props.info.titulo}</h2>  
+            <h2 className="lista">{this.state.titulo}</h2>  
         </div>
         
         <div className="card">
