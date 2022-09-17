@@ -16,8 +16,17 @@
 
 .boton{
     display: flex;
+    cursor: pointer;
 }
 img{
     size: 20%;
 }
-
+h2{
+    color: black;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}

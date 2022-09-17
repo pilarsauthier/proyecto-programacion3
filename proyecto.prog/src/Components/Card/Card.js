@@ -5,8 +5,11 @@ class Card extends Component{
     constructor(props){
         super(props)
         this.state ={
-          verMas: 'hide',
-          favorito: false
+          text: 'Ver mas',
+          showing:false,
+          favorito: false,
+          descClassName: 'hidden'
+
         }
       }
 
@@ -22,6 +25,22 @@ class Card extends Component{
           }
         }
     
+      }
+      showDescription(){
+        if (this.state.showing){
+          this.setState({
+            text: "Ver Menos",
+            showing: false,
+            descClassName: "hidden"
+          })
+        }
+        else{
+          this.setState({
+            text: 'Ver mas',
+            showing: false,
+            descClassName: 'hidden'
+          })
+        }
       }
 
       addFavorites(id){
@@ -63,12 +82,17 @@ class Card extends Component{
        <div className='card-detail'> 
        <article>
             <img src={this.props.data.cover_medium || this.props.data.album.cover_medium}></img> 
-            <h3>{this.props.data.title}</h3>
+          <div> 
+            <h2>{this.props.data.title}</h2>
+            <h3>{this.props.data.artist.name}</h3>
+          
+          <div className={this.state.descClassName}>
             <p className='card-detail'>Duracion: {this.props.data.duration || null} segundos</p>
             <p className='card-detail'>Ranking: {this.props.data.rank || this.props.data.position}</p>
-            
-            <button className='boton'>Ver Mas</button>
+          </div> 
+            <button className='boton' onClick={()=>this.showDescription()}>{this.state.text}</button>
             <button className='boton'>Ir Detalle</button>
+          </div> 
             {
               this.state.favorito
               ?
