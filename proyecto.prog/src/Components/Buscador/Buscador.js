@@ -31,8 +31,3 @@ class Buscador extends Component {
 }
 
 export default Buscador;
-
-
-//etiqueta buscador en el home (ubicacion)
-//css buscador
-//card-detail en vez de card info

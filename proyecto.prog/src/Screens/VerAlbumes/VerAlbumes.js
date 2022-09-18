@@ -25,10 +25,10 @@ class VerAlbumes extends Component {
         )
             .then((results) => results.json())
             .then((resultados) => {
-                
+
                 this.setState({
                     info: resultados,
-                  
+
                 });
             })
             .catch((e) => console.log(e));
@@ -43,9 +43,8 @@ class VerAlbumes extends Component {
                 .then(data => this.setState({
                     resultadosBusqueda: data.data,
                     buscar: true
-                }, () => {
-                
-                }))
+                }
+                ))
         }
 
     }
@@ -54,12 +53,12 @@ class VerAlbumes extends Component {
 
     render() {
 
-        const mostrarBuscador = (resultado, idx)=> {
+        let mostrarBuscador = (resultado, idx) => {
             if (this.state.buscar) {
-               return <CardBuscador data={resultado} key={idx}/> 
+                return <CardBuscador data={resultado} key={idx} />
             }
             else {
-            return <Card data={resultado} key={idx}/>
+                return <Card data={resultado} key={idx} />
             }
         }
 
@@ -68,14 +67,14 @@ class VerAlbumes extends Component {
                 <div className="home">
                     <Buscador metodoQueBusca={(valor) => this.buscarData(valor)}></Buscador>
                     <div className="card">
-                    {
-                        this.state.resultadosBusqueda.length > 0 //[{},{},{}]
-                            ?
-                            //'hola'
-                            this.state.resultadosBusqueda.map((resultado, idx) => mostrarBuscador(resultado, idx))
-                            //<CardBuscador info ={this.state.resultadosBusqueda} /> //arreglar .cover y
-                            : ''
-                    }
+                        {
+                            this.state.resultadosBusqueda.length > 0 //[{},{},{}]
+                                ?
+                                //'hola'
+                                this.state.resultadosBusqueda.map((resultado, idx) => mostrarBuscador(resultado, idx))
+                                //<CardBuscador info ={this.state.resultadosBusqueda} /> //arreglar .cover y
+                                : ''
+                        }
                     </div>
                     <Listado info={this.state.info.albums.data} titulo={'Albumes'} />
                 </div>

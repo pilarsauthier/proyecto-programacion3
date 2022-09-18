@@ -20,7 +20,6 @@ class Listado extends Component{
         <div className='titulo'>
             <h2 className="lista">{this.state.titulo}</h2>  
         </div>
-        
         <div className="card">
         {this.props.info.map((item, idx) =>{
           
