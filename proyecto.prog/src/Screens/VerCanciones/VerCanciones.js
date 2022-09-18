@@ -54,7 +54,7 @@ class VerCanciones extends Component {
 
     render() {
 
-        const mostrarBuscador = (resultado, idx)=> {
+        let mostrarBuscador = (resultado, idx)=> {
             if (this.state.buscar) {
                return <CardBuscador data={resultado} key={idx}/> 
             }
@@ -78,7 +78,6 @@ class VerCanciones extends Component {
                     }
                     </div>
                     <Listado info={this.state.info.tracks.data} titulo={'Canciones'} />
-                    <Listado info={this.state.info.albums.data} titulo={'Albumes'} />
                 </div>
             )
         } else {

@@ -6,12 +6,12 @@ import Card from "../../Components/Card/Card"
 import Buscador from "../../Components/Buscador/Buscador"
 import './home.css'
 
-
+//state, component, 
 
 class Home extends Component {
     constructor(props) {
+     super(props);
 
-        super(props);
         this.state = {
             info: '',
             resultadosBusqueda: [],
@@ -27,7 +27,7 @@ class Home extends Component {
                 
                 this.setState({
                     info: resultados,
-                  
+
                 });
             })
             .catch((e) => console.log(e));
@@ -41,7 +41,8 @@ class Home extends Component {
                 .then(resp => resp.json())
                 .then(data => this.setState({
                     resultadosBusqueda: data.data,
-                    buscar: true
+                    buscar: true 
+                    
                 }, () => {
                 
                 }))
@@ -53,7 +54,7 @@ class Home extends Component {
 
     render() {
 
-        const mostrarBuscador = (resultado, idx)=> {
+        let mostrarBuscador = (resultado, idx)=> {
             if (this.state.buscar) {
                return <CardBuscador data={resultado} key={idx}/> 
             }
