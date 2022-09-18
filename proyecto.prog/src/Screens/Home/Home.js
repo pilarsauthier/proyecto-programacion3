@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Listado from "../../Components/Listado/Listado";
-import Loader from "../../Components/Loader/Loader"
-import CardBuscador from "../../Components/CardBuscador/CardBuscador";
 import Card from "../../Components/Card/Card"
+import CardBuscador from "../../Components/CardBuscador/CardBuscador";
 import Buscador from "../../Components/Buscador/Buscador"
 import './home.css'
 
@@ -10,7 +9,6 @@ import './home.css'
 
 class Home extends Component {
     constructor(props) {
-
         super(props);
         this.state = {
             info: '',

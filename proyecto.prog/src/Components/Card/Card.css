@@ -30,3 +30,11 @@ h2{
 .show{
     display: block;
 }
+button{
+    height: 30px;
+    align-items: center;
+    background-color: white;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+}
