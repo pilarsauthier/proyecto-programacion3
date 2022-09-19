@@ -27,7 +27,6 @@ function App() {
   <Route path="/" exact={true} component={Home}/>
   <Route path="/VerCanciones" exact={true} component={VerCanciones}/>
   <Route path="/VerAlbumes" component={VerAlbumes}/>
-  <Route path='/Favoritos' component={Favoritos} />
   <Route path="" component={NotFound}/> 
 </Switch>
     <Footer/>
