@@ -21,9 +21,9 @@ class Listado extends Component{
             <h2 className="lista">{this.state.titulo}</h2>  
         </div>
         <div className="card">
-        {this.props.info.map((item, idx) =>{
+        {this.props.info.map((item, idx) =>{  /* map mi metodo de array que retorna un array modficiado */
           
-        return <Card key={`${Date.now()}-${idx}`} data={item}/>
+        return <Card key={idx} data={item}/>
         
     })}</div>
     
