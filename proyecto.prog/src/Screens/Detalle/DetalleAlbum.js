@@ -40,7 +40,14 @@ class DetalleA extends Component{
                             <h3>Artista: {this.state.album.artist.name}</h3>
                             <h3>{this.state.album.genres.name}</h3>
                             <h3>Fecha de estreno: {this.state.album.release_date}</h3>
-                            {/* <h3>{this.state.album.tracklist}</h3> */}
+                            <ul>
+                                <h1>Tracklist:</h1>
+                                    {
+                                        this.state.album.tracks.data.map((tracklist, i) => {
+                                            return (<li>{++i}. {tracklist.title} </li>)
+                                        })
+                                    }
+                                </ul>
                               
                             
                         </div>

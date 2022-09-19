@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import Card from "../../Components/Listado/Listado";
 import {Link} from "react-router-dom"
 import "./detalleT.css"
-// import ReactPlayer from 'react-player'
 
 class DetalleT extends Component{
     constructor(props){
@@ -40,7 +39,7 @@ class DetalleT extends Component{
                     <h1>Cancion: {this.state.tracks.title}</h1>
                     <h3>Artista: {this.state.tracks.artist.name}</h3>
                     <h3>Album: {this.state.tracks.album.title}</h3>
-                    {/* <ReactPlayer url={this.state.tracks.preview} /> */}
+                   
                     
                       
                     
