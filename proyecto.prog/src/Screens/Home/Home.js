@@ -5,7 +5,7 @@ import CardBuscador from "../../Components/CardBuscador/CardBuscador";
 import Buscador from "../../Components/Buscador/Buscador"
 import './home.css'
 
-//state, component, 
+//state, component, ...
 
 class Home extends Component {
     constructor(props) {
