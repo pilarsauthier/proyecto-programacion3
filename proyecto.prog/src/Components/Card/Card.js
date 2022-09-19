@@ -87,7 +87,6 @@ class Card extends Component{
               <h2>{this.props.data.title}</h2>
               <h3>{this.props.data.artist.name}</h3>
             
-            <button className='boton'>Ver Mas</button>
             {
                     this.props.data.type === "track" ?
                         <Link to={`/DetalleTrack/${this.props.data.id}`}>  <button  className='boton'>Ir Detalle</button> </Link>
@@ -101,7 +100,7 @@ class Card extends Component{
                 <p className='card-detail'>Ranking: {this.props.data.rank || this.props.data.position}</p>
               </div> 
               <button className='boton' onClick={()=>this.showDescription()}>{this.state.text}</button>
-              <button className='boton'>Ir Detalle</button>
+            
             </div> 
               {
                 this.state.favorito
