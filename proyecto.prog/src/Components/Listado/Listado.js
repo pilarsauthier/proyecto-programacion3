@@ -6,7 +6,8 @@ class Listado extends Component{
     constructor(props){
         super(props)
         this.state={
-            info:[]
+            info:'',
+            titulo: props.titulo
         }
     }
 
@@ -17,12 +18,11 @@ class Listado extends Component{
         return(
         <section className="fila">
         <div className='titulo'>
-            <h2 className="lista">{this.props.info.titulo}</h2>  
+            <h2 className="lista">{this.state.titulo}</h2>  
         </div>
-        <h3>VER TODAS</h3>
         <div className="card">
         {this.props.info.map((item, idx) =>{
-            console.log(item);
+          
         return <Card key={`${Date.now()}-${idx}`} data={item}/>
         
     })}</div>
@@ -32,5 +32,6 @@ class Listado extends Component{
     }
    
 }
+
 
 export default Listado;

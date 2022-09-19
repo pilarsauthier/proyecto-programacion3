@@ -6,8 +6,11 @@ class Card extends Component{
     constructor(props){
         super(props)
         this.state ={
-          verMas: 'hide',
-          favorito: false
+          text: 'Ver mas',
+          showing: true,
+          favorito: false,
+          descClassName: 'hidden'
+
         }
       }
 
@@ -23,6 +26,22 @@ class Card extends Component{
           }
         }
     
+      }
+      showDescription(){
+        if (this.state.showing){
+          this.setState({
+            text: "Ver Menos",
+            showing: false,
+            descClassName: "show"
+          })
+        }
+        else{
+          this.setState({
+            text: 'Ver mas',
+            showing: true,
+            descClassName: 'hidden'
+          })
+        }
       }
 
       addFavorites(id){
@@ -62,11 +81,11 @@ class Card extends Component{
     render(){
     return(
        <div className='card-detail'> 
-       <article>
+        <article>
             <img src={this.props.data.cover_medium || this.props.data.album.cover_medium}></img> 
-            <h3>{this.props.data.title}</h3>
-            <p className='card-detail'>Duracion: {this.props.data.duration || null} segundos</p>
-            <p className='card-detail'>Ranking: {this.props.data.rank || this.props.data.position}</p>
+            <div> 
+              <h2>{this.props.data.title}</h2>
+              <h3>{this.props.data.artist.name}</h3>
             
             <button className='boton'>Ver Mas</button>
             {
@@ -76,14 +95,22 @@ class Card extends Component{
                         <Link to={`/DetalleAlbum/${this.props.data.id}`}>  <button  className='boton'>Ir Detalle</button> </Link>
                 }
            
-            {
-              this.state.favorito
-              ?
-                <button onClick={()=> this.removeFavorites(this.props.data.id) }>Sacar de favoritos</button>
-              :
-                <button onClick={()=> this.addFavorites(this.props.data.id) }>Agregar a favoritos</button>
-            }
-        </article>
+       
+              <div className={this.state.descClassName}>
+                <p className='card-detail'>Duracion: {this.props.data.duration || null} segundos</p>
+                <p className='card-detail'>Ranking: {this.props.data.rank || this.props.data.position}</p>
+              </div> 
+              <button className='boton' onClick={()=>this.showDescription()}>{this.state.text}</button>
+              <button className='boton'>Ir Detalle</button>
+            </div> 
+              {
+                this.state.favorito
+                ?
+                  <button onClick={()=> this.removeFavorites(this.props.data.id) }>Sacar de favoritos</button>
+                :
+                  <button onClick={()=> this.addFavorites(this.props.data.id) }>Agregar a favoritos</button>
+              }
+          </article>
         </div>
     )
     }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Listado from '../../Components/Listado/Listado';
 import Card from '../../Components/Card/Card';
-
+import '../../Components/Listado/Listado.css'
 
 class Favoritos extends Component {
     constructor(props){
