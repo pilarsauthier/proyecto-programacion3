@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Listado from '../../Components/Listado/Listado';
 import Card from '../../Components/Card/Card';
-import './favoritos.css'
+
 
 class Favoritos extends Component {
     constructor(props){
@@ -32,13 +32,13 @@ class Favoritos extends Component {
     }
     render(){
         return(
-            <h1> Favoritos </h1> ,
+           
             <div>
-    
+     <h1> Tus favoritos </h1> 
         {this.state.arrayFavs.map((fav, idx)=>{
                  console.log(fav);
                  return <Card key={`${Date.now()}-${idx}`} data={fav}/>
-             })}
+             })} 
     
             </div>  
         )

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from "react-router-dom"
 import './Card.css'
 
 class Card extends Component{
@@ -68,7 +69,13 @@ class Card extends Component{
             <p className='card-detail'>Ranking: {this.props.data.rank || this.props.data.position}</p>
             
             <button className='boton'>Ver Mas</button>
-            <button className='boton'>Ir Detalle</button>
+            {
+                    this.props.data.type === "track" ?
+                        <Link to={`/DetalleTrack/${this.props.data.id}`}>  <button  className='boton'>Ir Detalle</button> </Link>
+                        :
+                        <Link to={`/DetalleAlbum/${this.props.data.id}`}>  <button  className='boton'>Ir Detalle</button> </Link>
+                }
+           
             {
               this.state.favorito
               ?
